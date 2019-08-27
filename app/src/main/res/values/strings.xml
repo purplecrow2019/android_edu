@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Lamamia</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Lamamia</string>
+    <string name="nav_header_subtitle">Finding new way to educate India</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_login">login</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="phone">आपका फ़ोन नंबर</string>
+    <string name="send_otp">ओटीपी भेजें</string>
+    <string name="otp">ओटीपी</string>
+    <string name="name">आपका नाम</string>
+    <string name="confirm">पुष्टि करें</string>
+    <string name="first_name">पहला नाम</string>
+    <string name="middle_name">मध्य नाम</string>
+    <string name="last_name">अंतिम नाम</string>
+    <string name="influencer">प्रभावक</string>
+    <string name="modules">मॉड्यूल</string>
+    <string name="title_activity_course_main">course_main</string>
+    <string name="title_home">होम</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="confirm_as_user">छात्र के रूप में</string>
+    <string name="confirm_as_instructor">प्रभावक के रूप में</string>
+    <string name="courses">पाठ्यक्रम</string>
+
+    <!-- new for modules -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_module_content">Module Content</string>
+    <string name="title_activity_module_video">ActivityModuleVideo</string>
+    <string name="title_activity_course_module_video">Content name</string>
+    <string name="title_activity_profile">ActivityProfile</string>
+    <string name="error_message">बाद में पुन: प्रयास करें।</string>
+
+    <string name="read_file">This app needs access to your file storage so that it can read files.</string>
+    <string name="choose_file">Choose File</string>
+    <string name="upload">Upload</string>
+    <string name="file_name">File Name</string>
+    <string name="course_not_found">नीचे दी गई खाली जगह भरकर और एड पर क्लिक करके आप एक नया कोर्स जोड़ सकते हैं।</string>
+    <string name="module_not_found">नीचे दी गई खाली जगह भरकर और जोड़ने पर क्लिक करके आप एक नया मॉड्यूल जोड़ सकते हैं।</string>
+    <string name="video_not_found">नीचे दी गई खाली जगह भरकर और एड पर क्लिक करके आप एक नया वीडियो जोड़ सकते हैं।</string>
+    <string name="title_activity_instructor_profile">InstructorProfileActivity</string>
+    <string name="title_activity_user_profile">UserProfileActivity</string>
+
+    <!-- category -->
+    <string name="choose_category">वर्ग चुने</string>
+
+    <!-- course -->
+    <string name="course_name">कोर्स का नाम</string>
+    <string name="description">कोर्स का विवरण</string>
+    <string name="course_outcome">कोर्स का परिणाम</string>
+    <string name="course_prerequisite">कोर्स की पूर्व शर्तें</string>
+    <string name="target_audience">लक्षित दर्शक</string>
+
+    <!-- video -->
+    <string name="new_video_upload">नया वीडियो अपलोड करें</string>
+
+    <!-- quiz -->
+    <string name="new_quiz_upload"> नया प्रश्नोत्तरी अपलोड करें</string>
+    <string name="quiz_name">प्रश्नोत्तरी का नाम</string>
+    <string name="quiz_instruction">प्रश्नोत्तरी के निर्देश</string>
+    <string name="quiz_time">सम्पूर्ण क्विज के लिये अधिकतम समय</string>
+    <string name="question_time">प्रत्येक प्रश्न के लिये अधिकतम समय</string>
+    <string name="quiz_submit">Submit</string>
+
+    <!-- Activities -->
+    <string name="activity_courses">पाठ्यक्रम</string>
+    <string name="default_notification_channel_id">channel_video_id_112</string>
+    <string name="default_notification_channel_title">video_notification_channel</string>
+
+    <!-- Questions -->
+    <string name="finish_question">Finish making Questions</string>
+    <string name="back">BACK</string>
+
+    <!-- In APP -->
+    <string name="compression_ask">
+        Please Choose YES if you want to compress your video, It can save your
+        internet data by compressing it to 70%, But it can take up to an hour or 2 depending on
+        video size/length. Please choose NO if you want to continue without compression, It can take
+        longer time to upload and data charges will be higher. Do you want to compress your video?
+    </string>
+
+</resources>

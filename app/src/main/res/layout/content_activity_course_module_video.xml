@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/constraintLayoutParent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".CourseModuleVideoActivity"
+    tools:showIn="@layout/app_bar_activity_course_module_video"
+    android:keepScreenOn="true">
+
+    <TextView
+        android:id="@+id/quizTimeHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/quizName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:id="@+id/mainVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fillViewport="true"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/main_media_frame"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:layout_gravity="center"
+                android:background="#000000">
+
+                <ProgressBar
+                    android:id="@+id/exoPlayerProgressBar"
+                    android:layout_gravity="center"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+
+                <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+                    android:id="@+id/exoplayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutHolderOfInfoAndComment"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewVideoDescriptionClick"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="जानकारी" />
+
+                <TextView
+                    android:id="@+id/textViewVideoCommentsClick"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="प्रश्नोत्तर" />
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/videoShareButton"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:tooltipText="Share"
+                    android:background="@color/white"
+                    app:srcCompat="@drawable/ic_share_black_24dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutCourseModuleComments"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:minHeight="10000dp">
+
+                <ExpandableListView
+                    android:id="@+id/expandableListViewComments"
+                    android:groupIndicator="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent">
+
+                </ExpandableListView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutVideoInformationHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerViewFilesHolder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:id="@+id/textViewVideoInformation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp" />
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/mainQuizStartView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:paddingBottom="70dp">
+
+            <LinearLayout
+                android:id="@+id/timeCounter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:background="@color/colorPrimaryDark">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="दिन"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="घंटे"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="मिनट"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="सेकंड"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtViewDayLeft"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/txtViewHourLeft"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/txtViewMinuteLeft"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/txtViewSecondLeft"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="00"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/grey"
+                    android:orientation="horizontal">
+                    
+                    <TextView
+                        android:id="@+id/timeStatusEndStart"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:text="टेस्ट देते समय एप्लिकेशन को बंद न करें।"
+                android:textSize="17sp"
+                android:textColor="@color/red"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/quizInstruction"
+                android:text="quiz instructions"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/totalQuestionHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/totalQuestions"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_circle_blue"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="प्रश्न हैं पूरे क्विज में"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/quizTotalTimeHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/quizTime"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_circle_blue"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="मिनट हैं पूरे क्विज के लिये"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questionTotalTimeHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/questionTime"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_circle_blue"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="मिनट हैं प्रत्येक प्रश्न के लिये"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/questionTotalMarksHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/maxMarks"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_circle_blue"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="अंक प्राप्त होते हैं, प्रत्येक सही उत्तर देने पर"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/questionNegativeMarksHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp">
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/negativeMarks"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:text="00"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_circle_blue"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="अंक कम कर दिया जायेगा, प्रत्येक गलत उत्तर देने पर"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/startQuiz"
+                    android:text="क्विज़ खेलें"
+                    android:layout_margin="5dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:gravity="center"
+                    android:background="@drawable/shape_circle_green"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/quizResult"
+                    android:text="स्कोर देखें"
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:background="@color/colorPrimaryDark"
+                    android:drawableStart="@drawable/ic_back_button"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/mainQuizResultView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="70dp"
+            android:gravity="center_horizontal">
+
+            <!-- Winning area -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        app:srcCompat="@drawable/trophy"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="बहुत सही खेला आपने"
+                        android:textColor="@color/green"
+                        android:gravity="center"
+                        android:padding="10dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal">
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/score"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="score"
+                        android:background="@drawable/shape_circle_green"
+                        android:layout_marginBottom="10dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="आपका स्कोर"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/colorPrimaryDark"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- /End winning area -->
+
+            <!-- Score board -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="नायक पटल"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimaryDark"
+                    android:padding="5dp"/>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/QuizLeaderBoardList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.RecyclerView>
+            </LinearLayout>
+            <!-- /Score board -->
+
+            <!-- Challenge Friends -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <TextView
+                    android:text="अपने मित्रों"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark" />
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/quizShareButton"
+                    app:srcCompat="@drawable/ic_share_black_24dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/shape_circle_blue"
+                    android:tint="@color/white"
+                    android:layout_gravity="center" />
+                <TextView
+                    android:text="को चुनौती दें"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorPrimaryDark" />
+            </LinearLayout>
+            <!-- /End challenge friends -->
+
+            <!-- Retake Options -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/seeAnswer"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="उत्तर देखें"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorPrimaryDark"/>
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/quizRetake"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="पुनः खेलें"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"
+                    android:background="@color/colorPrimaryDark"/>
+            </LinearLayout>
+            <!-- /End Retake options -->
+
+            <!-- Report area -->
+            <LinearLayout
+                android:background="@color/smoke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="सही उत्तर"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="यथार्थता"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="औसत समय"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/correctPercentage"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="सही उत्तर"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/attemptedPercentage"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="यथार्थता"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/averageTime"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="औसत समय"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- /Report area -->
+
+            <!-- Report area marks -->
+            <LinearLayout
+                android:background="@color/smoke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="सही"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="गलत"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="छोड़े"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="समय"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/correctAnswers"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="सही"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/wrongAnswers"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="गलत"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/leftAnswers"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="छोड़े"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/totalTimeTaken"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="समय"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- /Report area marks -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/relativeLayoutPostParentComment"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutNextAndPrevious"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/editTextSendParentComment"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="wrap_content"
+                android:maxLines="5"
+                android:inputType="textMultiLine"
+                android:background="@android:color/white"
+                android:padding="15dp"
+                android:hint="प्रश्न टाइप करें"/>
+            <android.support.v7.widget.AppCompatImageButton
+                android:id="@+id/imageButtonSendParentComment"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                app:srcCompat="@drawable/ic_send_black_24dp"
+                android:tint="@color/colorPrimary"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutNextAndPrevious"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginStart="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/textViewPrevious"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="पिछला"/>
+        <TextView
+            android:id="@+id/textViewCurrentVideoOrder"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:text="Present"/>
+        <TextView
+            android:id="@+id/textViewNext"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:text="अगला"/>
+        <EditText
+            android:id="@+id/courseIdHolder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/order_for_current_video"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/total_video_count"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/textViewCurrentVideoIdHolder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/textViewCurrentContentTypeHolder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/textViewCurrentModuleIdHolder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/video_url_holder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

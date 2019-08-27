@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "982242091382",
+    "firebase_url": "https://lamamia-notifications.firebaseio.com",
+    "project_id": "lamamia-notifications",
+    "storage_bucket": "lamamia-notifications.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982242091382:android:8aae39929d6fdcde",
+        "android_client_info": {
+          "package_name": "com.lamamia.android.lamamia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982242091382-lj5kknhl1rqqhs9jpqvtjv5cc5n616ip.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBE8o8Jyjg4S6-KIXp5h7KQvhm6IRQGFRM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

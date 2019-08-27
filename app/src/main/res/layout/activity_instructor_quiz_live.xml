@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorQuizLive">
+
+    <!-- hidden fields -->
+    <EditText
+        android:id="@+id/videoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/publish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+    <TextView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+    <!-- /hidden fields -->
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:id="@+id/timeCounter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:background="@color/colorPrimaryDark">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="दिन"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="घंटे"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="मिनट"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="सेकंड"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txtViewDayLeft"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/txtViewHourLeft"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/txtViewMinuteLeft"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/txtViewSecondLeft"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:text="--"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:background="@color/grey"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/timeStatusEndStart"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/quizStartView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/publishArea"
+                        android:padding="10dp"
+                        android:background="@color/colorPrimaryDark"
+                        android:textColor="@color/white"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="क्विज सक्रिय होने का समय निर्धारित करें" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/publishNow"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:textColor="@color/grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="अभी के अभी सक्रिय करें" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/publishLater"
+                        android:padding="10dp"
+                        android:background="@color/white"
+                        android:textColor="@color/grey"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="भविष्य की तिथि पर सक्रिय करें" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/startDate"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="तिथि चुनें"
+                        android:background="@color/bgColorTime"
+                        android:inputType="none"
+                        android:textSize="30sp"
+                        android:gravity="center_horizontal" />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/startTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/bgColorTime"
+                        android:hint="समय चुनें"
+                        android:inputType="none"
+                        android:textSize="30sp"
+                        android:gravity="center_horizontal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="क्विज निष्क्रिय होने का समय निर्धारित करें"
+                        android:padding="10dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/white"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtEndNow"
+                        android:text="अभी के अभी निष्क्रिय करें"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/grey"
+                        android:padding="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtNotEnd"
+                        android:text="कभी भी निष्क्रिय ना करें"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/grey"
+                        android:padding="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtEndTime"
+                        android:text="सीमित समय के बाद निष्क्रिय कर दें"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:textColor="@color/grey"
+                        android:padding="10dp"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="?android:attr/listDivider" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/endDay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:hint="दिन"
+                            android:inputType="number"
+                            android:maxLength="3"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"/>
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/endHour"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:hint="घंटा"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:layout_weight="1"
+                            android:layout_margin="5dp"/>
+                        <android.support.v7.widget.AppCompatEditText
+                            android:id="@+id/endMinute"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:hint="मिनट"
+                            android:inputType="number"
+                            android:maxLength="2"
+                            android:layout_margin="5dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/publishTimeSee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView
+                        android:text="क्विज सक्रिय होने का समय"
+                        android:padding="10dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/white"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/publishTimeSeeDate"
+                            android:padding="10dp"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/unPublishTimeSee"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView
+                        android:text="क्विज निष्क्रिय होने का समय"
+                        android:padding="10dp"
+                        android:gravity="center_horizontal"
+                        android:textColor="@color/white"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                        <TextView
+                            android:id="@+id/unPublishTimeSeeDate"
+                            android:padding="10dp"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/black"
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="20dp">
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/btnLive"
+                        android:text="Live"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_margin="5dp" />
+                    <android.support.v7.widget.AppCompatButton
+                        android:id="@+id/back"
+                        android:text="Cancel"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:background="@color/colorPrimary"
+                        android:textColor="@color/white"
+                        android:layout_margin="5dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/processing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_message"
+            android:textColor="@color/darkestBlue" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/deleted"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+        <android.support.v7.widget.AppCompatImageView
+            app:srcCompat="@drawable/ic_check_circle_black_24dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="Your quiz is live now. Please wait for 2 seconds..."
+            android:textColor="@color/green" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

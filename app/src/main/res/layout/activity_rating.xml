@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.shubham.lamamia_project.RatingActivity">
+
+    <TextView
+        android:id="@+id/textViewRatingActivityCourseIdHolder"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRatingActivityRecent"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:background="@drawable/follow_button_style"
+                android:gravity="center" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRatingActivityStarFive"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/follow_button_style" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRatingActivityStarFour"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/follow_button_style"
+                />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRatingActivityStarThree"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/follow_button_style" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRatingActivityStarTwo"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/follow_button_style" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/buttonRatingActivityStarOne"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/follow_button_style" />
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/lightBlue">
+
+        <TextView
+            android:id="@+id/imageViewRatingActivityPostRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:drawableEnd="@drawable/ic_next_button"
+            android:text="मूल्यांकन करें"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewRatingActivityNotFoundText"
+        android:foregroundGravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@color/green"
+        android:text="कोई मूल्यांकन उपलब्ध नहीं है"
+        android:visibility="gone"/>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerViewRatingActivityRatings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutOtpConfirmContentHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:layout_marginBottom="40dp"
+            android:textColor="@color/white"
+            />
+
+        <EditText
+            android:id="@+id/editTxtOtpConfirmation"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:maxLength="6"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:inputType="phone"
+            android:hint="@string/otp"
+            android:textColorHint="@color/grey"
+            android:layout_marginLeft="20dp"
+            android:layout_margin="10dp"
+            android:layout_marginRight="20dp"/>
+
+        <EditText
+            android:id="@+id/editTextOtpConfirmPhone"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnOtpConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/confirm"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_login_design"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnOtpConfirmInstructor"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/confirm"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/button_login_design"
+            android:textColor="@color/white"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutOtpConfirmChoice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnOtpConfirmAsUser"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:text="@string/confirm_as_user"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_login_design"
+                android:textColor="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+            <Button
+                android:id="@+id/btnOtpConfirmAsInstructor"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="50dp"
+                android:text="@string/confirm_as_instructor"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/follow_button_style"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutOtpConfirmProgressBar"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:text="हम प्रसंस्करण कर रहे हैं। कृपया प्रतीक्षा करें ..."/>
+
+    </LinearLayout>
+
+</LinearLayout>

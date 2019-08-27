@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HelpActivity">
+
+
+    <EditText
+        android:id="@+id/editTextHelpTopic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:inputType="text"
+        android:hint="विषय टाइप करें"/>
+
+    <EditText
+        android:id="@+id/editTextHelpMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:lines="5"
+        android:maxLines="10"
+        android:inputType="textMultiLine"
+        android:hint="संदेश टाइप करें"
+        app:layout_constraintStart_toEndOf="@+id/editTextHelpTopic"/>
+
+    <Button
+        android:id="@+id/buttonHelpSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="संदेश भेजें"
+        android:textColor="@color/colorPrimaryDark"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="176dp" />
+
+
+</LinearLayout>

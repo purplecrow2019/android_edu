@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainHolderView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:gravity="center">
+
+    <LinearLayout
+        android:id="@+id/moveUp"
+        android:background="@color/grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:text="Move Up     "
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textColor="@color/white"
+            android:layout_marginEnd="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/ic_video_up"
+            android:background="@android:color/transparent"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@drawable/button_login_design"
+        >
+
+        <TextView
+            android:id="@+id/videoName"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:text="Video name"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/videoEdit"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_edit_black_24dp"
+            android:background="@android:color/transparent"/>
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/videoDelete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_delete_forever_black_24dp"
+            android:background="@android:color/transparent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/moveDown"
+        android:background="@color/grey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="5dp"
+        android:visibility="gone">
+
+        <TextView
+            android:text="Move down"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textColor="@color/white"
+            android:layout_marginEnd="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/ic_video_down"
+            android:background="@android:color/transparent"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

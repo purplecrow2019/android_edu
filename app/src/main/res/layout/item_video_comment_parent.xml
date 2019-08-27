@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageViewVideoParentCommenterUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/profile"
+            app:civ_border_width="1dp"
+            android:paddingTop="5dp"
+            app:civ_border_color="@color/colorPrimary"
+            android:visibility="gone"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imageViewVideoParentCommenterInstructor"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            app:srcCompat="@drawable/profile"
+            app:civ_border_width="1dp"
+            android:paddingTop="5dp"
+            app:civ_border_color="@color/colorPrimary"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_weight="10"
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textViewVideoParentCommenterUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="@color/grey"
+                />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textViewVideoParentCommenterInstructor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:textSize="12sp"
+                android:visibility="gone"
+                android:textColor="@color/colorPrimaryDark"
+                />
+
+            <TextView
+                android:id="@+id/textViewVideoParentComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="12sp"
+                android:text="Parent Comment"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imageButtonReply"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:padding="5dp"
+            android:background="@android:color/transparent"
+            android:foregroundGravity="right"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ic_reply_black_24dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/relativeLayoutPostParentComment"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutNextAndPrevious"
+        android:layout_width="match_parent"
+        android:background="@color/smoke"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/editTextParentCommentId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/editTextSendChildComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:inputType="text"
+            android:hint="Type Comment"/>
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/imageButtonSendChildComment"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/shape_send_button"
+            app:srcCompat="@drawable/ic_reply_black_24dp"
+            android:foregroundGravity="center_vertical"/>
+
+    </LinearLayout>
+
+</LinearLayout>

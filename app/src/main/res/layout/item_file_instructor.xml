@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/InstructorFileHolder"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/pdf_file_back"
+    android:layout_margin="10dp">
+
+    <TextView
+        android:id="@+id/fileName"
+        android:text="File Name"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:padding="10dp"
+        android:textColor="@color/grey"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"/>
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/editFile"
+        app:srcCompat="@drawable/ic_edit_black_24dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/red"/>
+
+    <android.support.v7.widget.AppCompatImageButton
+        android:id="@+id/deleteFile"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/red"
+        app:srcCompat="@drawable/ic_delete_forever_black_24dp"/>
+
+</LinearLayout>

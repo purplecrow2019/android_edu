@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.shubham.lamamia_project">
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="TASKS" />
+
+    <uses-configuration android:configChanges="orientation" />
+
+    <application
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+        android:icon="@drawable/logo"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/logo"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name=".GenericFileProvider"
+            android:authorities="com.lamamia.android.lamamia.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"
+                tools:replace="android:resource" />
+        </provider>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.lamamia.android.lamamia.provider.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path"
+                tools:replace="android:resource" />
+        </provider>
+
+        <service
+            android:name=".NotificationsVideos"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".FFMpegService" />
+        <service
+            android:name=".FloatingWidgetService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OtpActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OtpConfirmActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CourseMainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="कोर्स विवरण"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter
+                android:autoVerify="true"
+                tools:targetApi="m">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="lamamia.in"
+                    android:pathPattern="/api/public/course"
+                    android:scheme="https" />
+                <data
+                    android:host="lamamia.in"
+                    android:pathPattern="/api/public/course"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CourseModuleVideoActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.NOTIFICATION_DEFAULT_OPEN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                tools:targetApi="m">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="lamamia.in"
+                    android:pathPattern="/api/public/video"
+                    android:scheme="https" />
+                <data
+                    android:host="lamamia.in"
+                    android:pathPattern="/api/public/course"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="सेटिंग्स"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommentActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".NotificationActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="अधिसूचना"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelpActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="सहायता"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WatchLiveActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar.live" />
+        <activity
+            android:name=".TermsActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="@string/influencer"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RatingActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Ratings"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PostRatingActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Rate Course"
+            android:parentActivityName=".RatingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CourseChildRatingsActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Rating"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CoursesActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="पाठ्यक्रम"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorCourseEditActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Course Edit"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorAddModuleActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Module add"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorModuleEditActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Module Edit"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorAddVideoQuizActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="Add Video or Quiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorProfileActivity"
+            android:label="प्रोफाइल"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileEditActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:label="प्रोफाइल अपडेट"
+            android:parentActivityName=".InstructorProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserProfileActivity"
+            android:label="प्रोफाइल"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".UserProfileUpdate"
+            android:label="प्रोफाइल अपडेट"
+            android:parentActivityName=".UserProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorCourseAddActivity"
+            android:label="Course Add"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorAddVideoActivity"
+            android:label="Upload Video"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorVideoDeleteActivity"
+            android:label="Delete Video"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorCoursesActivity"
+            android:label="My Courses"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorPreviewCourseActivity"
+            android:parentActivityName=".InstructorCoursesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorPreviewModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorModuleDeleteActivity"
+            android:label="Module Delete"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorCourseDeleteActivity"
+            android:label="Course Delete"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorCoursePublishActivity"
+            android:label="Publish your course"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChooseVideoListActivity"
+            android:label="Choose Video"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpdateApplicationActivity"
+            android:label="Application update"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorDeleteFileActivity"
+            android:label="Delete File"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorFileUpdateActivity"
+            android:label="Attachment Upload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorAddQuizActivity"
+            android:label="Add Quiz"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorQuestionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorQuestionAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorQuestionDeleteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorQuestionUpdateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuestionsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InstructorQuizLive"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".QuestionsCorrectAnswersActivity"
+            android:screenOrientation="portrait" />
+        <!-- User profile image crop -->
+        <activity
+            android:name=".UserCropImageActivity"
+            android:label="प्रोफ़ाइल फोटो" />
+        <activity android:name=".LogoutActivity" />
+        <activity android:name=".InstructorCropImageActivity" />
+        <activity
+            android:name=".InstructorVideoEditorActivity"
+            android:label="Video Edit" />
+        <activity
+            android:name=".RecordVideoActivity"
+            android:label="Record Video" />
+        <activity android:name=".InformationCenterActivity" />
+        <activity
+            android:name=".MonetizationMainActivity"
+            android:label="Monetization" />
+        <activity
+            android:name=".CourseInsightsActivity"
+            android:label="Insights" />
+        <activity
+            android:name=".InstructorVideoInsightsActivity"
+            android:label="Video insight" />
+        <activity
+            android:name=".ImageViewerActivity"
+            android:theme="@style/AppThemeNoTitle" />
+        <activity android:name=".InstructorPaymentDetailActivity" />
+        <activity android:name=".InstructorPaymentHistoryActivity"></activity>
+    </application>
+
+</manifest>

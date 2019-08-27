@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="InstructorAddVideoQuizActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/module_id_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/module_name_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/smoke">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="कोर्स का चयन करें"
+                android:paddingTop="20dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorPrimary" />
+
+            <Spinner
+                android:id="@+id/course_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/text_box_style">
+
+            </Spinner>
+
+            <TextView
+                android:id="@+id/moduleText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="मॉड्यूल का चयन करें"
+                android:paddingTop="20dp"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/colorPrimary" />
+
+            <Spinner
+                android:id="@+id/module_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_margin="10dp"
+                android:background="@drawable/text_box_style">
+
+            </Spinner>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewVideos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/smoke"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/upload_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    android:text="@string/new_video_upload" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/upload_quiz"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@color/white"
+                    android:text="@string/new_quiz_upload" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/processing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_message"
+            android:textColor="@color/red"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/courseNotAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You do not have any course. Please add course first..."
+            android:textColor="@color/darkestBlue"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/moduleNotAvailable"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You do not have any module. Please add module first..."
+            android:textColor="@color/darkestBlue"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

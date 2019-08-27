@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorPaymentDetailActivity">
+
+    <ScrollView
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/smoke">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account Holder's Name:"/>
+            <EditText
+                android:id="@+id/accountHolderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="NAME"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:inputType="textPersonName"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Account number"
+                android:layout_marginTop="20px"/>
+            <EditText
+                android:id="@+id/accountNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="XXXX XXXX XXXX XXXX"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:inputType="number"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="IFSC code"
+                android:layout_marginTop="20px"/>
+            <EditText
+                android:id="@+id/ifscCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="BANK000034"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:inputType="textNoSuggestions"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bank Name"
+                android:layout_marginTop="20px"/>
+            <EditText
+                android:id="@+id/bankName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Bank"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:inputType="text"/>
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="* Please fill it carefully. You can not change it after submitting."
+                android:textColor="@color/red"/>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/addBankDetail"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                android:text="SUBMIT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/error"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/errorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/processing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

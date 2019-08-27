@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainFileHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_constraintCircleRadius="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/pdfFileHolder"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="@drawable/pdf_file_back"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/pdfFileName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/grey"
+            android:padding="5dp"
+            android:drawableStart="@drawable/ic_pdf_red"
+            android:drawablePadding="20dp"
+            android:gravity="center_vertical"
+            android:text="फाइल खोलें"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/excelFileHolder"
+        android:background="@drawable/excel_file_back"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/excelFileName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/grey"
+            android:padding="5dp"
+            android:drawableStart="@drawable/ic_excel_green"
+            android:gravity="center_vertical"
+            android:drawablePadding="20dp"
+            android:text="फाइल खोलें"/>
+
+    </LinearLayout>
+
+</LinearLayout>

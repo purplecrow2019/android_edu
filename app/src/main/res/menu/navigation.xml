@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_module"
+        android:icon="@drawable/ic_play_circle_outline_black_24dp"
+        android:title="वीडियो" />
+
+    <item
+        android:id="@+id/navigation_course"
+        android:icon="@drawable/ic_info_red"
+        android:title="जानकारी" />
+
+    <item
+        android:id="@+id/navigation_influencer"
+        android:icon="@drawable/ic_supervisor_account_black_24dp"
+        android:title="प्रभावक" />
+
+</menu>

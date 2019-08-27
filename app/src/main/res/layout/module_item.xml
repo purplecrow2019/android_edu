@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:paddingStart="30dp"
+    android:paddingEnd="0dp"
+    android:background="@color/smoke">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewModuleItemName"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/textViewModelItemDuration"
+            android:paddingTop="20dp"
+            android:paddingBottom="0dp"
+            android:textColor="@color/metal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:text="Modules"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewModelItemDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:paddingBottom="0dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/darkestBlue"
+            android:text="00 m" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarCoursePercentage"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:theme="@style/AppTheme.NoActionBar.UpBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:progress="25" />
+
+</LinearLayout>

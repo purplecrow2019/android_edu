@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="30dp"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imageViewVideoChildCommenterUser"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/profile"
+        app:civ_border_width="1dp"
+        android:padding="5dp"
+        android:visibility="gone"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/imageViewVideoChildCommenterInstructor"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/profile"
+        app:civ_border_width="1dp"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:civ_border_color="@color/colorPrimaryDark"/>
+
+    <LinearLayout
+        android:layout_weight="6"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textViewVideoChildCommenterUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            android:paddingTop="5dp"
+            android:text="student"
+            android:paddingStart="20dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/textViewVideoChildCommenterInstructor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            android:paddingTop="5dp"
+            android:paddingStart="20dp"
+            android:text="Influencer"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/textViewVideoChildComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:text="Child Comment"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

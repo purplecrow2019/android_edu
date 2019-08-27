@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_youtube"
+            android:title="यूट्यूब"
+            android:icon="@drawable/youtube_logo"
+            />
+
+        <item
+            android:id="@+id/nav_facebook"
+            android:title="फेसबुक"
+            android:icon="@drawable/facebook_logo"
+            />
+
+        <item
+            android:id="@+id/nav_twitter"
+            android:title="ट्विटर"
+            android:icon="@drawable/twitter_logo"
+            />
+
+        <item
+            android:id="@+id/nav_instagram"
+            android:title="इंस्टाग्राम"
+            android:icon="@drawable/instagram_logo"
+            />
+
+        <item
+            android:id="@+id/nav_linked_in"
+            android:title="लिंक्डइन"
+            android:icon="@drawable/linkedin_logo"
+            />
+
+        <item
+            android:id="@+id/nav_app_share"
+            android:icon="@drawable/ic_share_black_24dp"
+            android:title="एप्लिकेशन शेयर"
+            />
+
+        <item
+            android:id="@+id/nav_terms"
+            android:icon="@drawable/ic_info_red"
+            android:title="नियम और शर्तें"
+            />
+
+        <item
+            android:id="@+id/nav_log_out"
+            android:icon="@drawable/ic_report_problem_black_24dp"
+            android:title="लोग आउट"
+            />
+
+    </group>
+
+</menu>

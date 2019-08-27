@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.shubham.lamamia_project.PostRatingActivity"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:id="@+id/textViewPostRatingActivityCourseIdHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <RatingBar
+        android:id="@+id/ratingBarPostRatingActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:foregroundGravity="center"
+        android:layout_marginTop="30dp"
+        android:stepSize="1.0"/>
+
+    <EditText
+        android:id="@+id/editTextPostRatingActivityRatingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:lines="3"/>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/editTextPostRatingActivityRatingButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login_design"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"
+        android:text="SUBMIT"/>
+
+
+</LinearLayout>

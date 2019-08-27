@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorAddQuizActivity">
+
+    <EditText
+        android:id="@+id/quizIdHolder"
+        android:inputType="number"
+        android:hint="@string/quiz_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/mainView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/quiz_name"
+                android:textColor="@color/colorPrimary" />
+            <EditText
+                android:id="@+id/quizName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_box_style"
+                android:padding="5dp"
+                android:inputType="text"
+                android:hint="@string/quiz_name"/>
+            <TextView
+                android:id="@+id/quizNameNa"
+                android:textSize="12sp"
+                android:textColor="@color/red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/quiz_instruction"
+                android:textColor="@color/colorPrimary" />
+            <EditText
+                android:id="@+id/quizInstruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_box_style"
+                android:lines="5"
+                android:hint="@string/quiz_instruction"
+                android:inputType="textMultiLine"
+                android:gravity="top|start"
+                android:scrollbars="vertical"
+                android:padding="5dp" />
+            <TextView
+                android:id="@+id/quizInstructionNa"
+                android:textSize="12sp"
+                android:textColor="@color/red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/quizQuestionTimePut"
+                android:text="उत्तर देने की समय सीमा"
+                android:background="@color/facebook"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"/>
+            <TextView
+                android:id="@+id/quizTimePut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/quiz_time"
+                android:padding="10dp"
+                android:textColor="@color/grey"
+                android:background="@color/white"
+                android:visibility="visible"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+            <TextView
+                android:id="@+id/questionTimePut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/question_time"
+                android:textColor="@color/grey"
+                android:background="@color/white"
+                android:padding="10dp"
+                android:visibility="visible" />
+            <LinearLayout
+                android:id="@+id/linearQuizTimePut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:background="@color/white"
+                android:visibility="gone">
+                <EditText
+                    android:id="@+id/quizTimeMinutes"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_box_style"
+                    android:hint="मिनट"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:gravity="center"
+                    android:scrollbars="vertical"
+                    android:layout_margin="5dp"
+                    android:textSize="25sp"/>
+                <EditText
+                    android:id="@+id/quizTimeSeconds"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_box_style"
+                    android:hint="सेकंड"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:gravity="center"
+                    android:scrollbars="vertical"
+                    android:layout_margin="5dp"
+                    android:textSize="25sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearQuestionTimePut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:background="@color/white"
+                android:visibility="gone">
+                <EditText
+                    android:id="@+id/questionTimeMinutes"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_box_style"
+                    android:hint="मिनट"
+                    android:inputType="numberDecimal"
+                    android:maxLength="2"
+                    android:gravity="center"
+                    android:scrollbars="vertical"
+                    android:layout_margin="5dp"
+                    android:textSize="25sp"/>
+                <EditText
+                    android:id="@+id/questionTimeSeconds"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_box_style"
+                    android:hint="सेकंड"
+                    android:inputType="numberDecimal"
+                    android:maxLength="2"
+                    android:gravity="center"
+                    android:scrollbars="vertical"
+                    android:layout_margin="5dp"
+                    android:textSize="25sp"/>
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/assignMarks"
+                android:text="अंक निर्धारित करें "
+                android:background="@color/facebook"
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="10dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:text="प्रत्येक प्रश्न के लिये अधिकतम अंक *"
+                    android:textColor="@color/colorPrimary" />
+                <EditText
+                    android:id="@+id/questionMaximumMarks"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_box_style"
+                    android:padding="5dp"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:hint="00"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:background="@color/white"
+                android:padding="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:text="प्रत्येक गलत उत्तर के लिये नकारात्मक अंक"
+                    android:textColor="@color/colorPrimary" />
+                <EditText
+                    android:id="@+id/questionNegativeMarks"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/text_box_style"
+                    android:padding="5dp"
+                    android:inputType="number"
+                    android:gravity="center"
+                    android:hint="00"/>
+            </LinearLayout>
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnQuizAdd"
+                android:text="@string/quiz_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/processing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/error_message"
+            android:textColor="@color/darkestBlue"
+            android:layout_marginBottom="5dp"
+            />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/reload"
+            android:text="RELOAD"
+            android:textColor="@color/white"
+            android:background="@drawable/button_login_design"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/viewMainVideosInsight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/videoName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Video name"
+                android:textColor="@color/black"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/videoInfoOneName"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/metal"
+                    android:text="Parameter name"/>
+                <TextView
+                    android:id="@+id/videoInfoTwoName"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Parameter name"/>
+                <TextView
+                    android:id="@+id/videoInfoThreeName"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/darkestBlue"
+                    android:text="Parameter name"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/videoInfoOne"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@color/metal"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="1"/>
+                <TextView
+                    android:id="@+id/videoInfoTwo"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="2"/>
+                <TextView
+                    android:id="@+id/videoInfoThree"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="@color/darkestBlue"
+                    android:layout_margin="1dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:textColor="@color/white"
+                    android:text="3"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

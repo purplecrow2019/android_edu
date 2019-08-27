@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SettingsActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSettingsHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutSettingActivityName"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textViewSettingActivityUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="User name"
+                    android:textSize="14sp"/>
+
+                <ImageButton
+                    android:id="@+id/imageButtonSettingsActivityUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/description"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_mode_edit_black_24dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/imageButtonSettingsActivityUserNameClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/description"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_arrow_upward_black_24dp"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewSettingActivityChangeName"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutSettingActivityName"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/editTextSettingActivityFirstName"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:inputType="text"
+                        android:hint="First Name"/>
+
+                    <EditText
+                        android:id="@+id/editTextSettingsActivityMiddleName"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:inputType="text"
+                        android:hint="Middle Name"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutSettingActivityNameTwo"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/editTextSettingsActivityLastName"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:inputType="text"
+                        android:hint="Last Name"
+                        />
+
+                    <Button
+                        android:id="@+id/btnNameChange"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:text="Change Name"
+                        android:textColor="@color/colorPrimary" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+
+        <View
+            android:id="@+id/dividerSettingsOne"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutSettingActivityEmail"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textViewSettingActivityUserEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="User Email"
+                    android:textSize="14sp"/>
+
+                <ImageButton
+                    android:id="@+id/imageButtonSettingsActivityUserEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/description"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_mode_edit_black_24dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/imageButtonSettingsActivityUserEmailClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/description"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_arrow_upward_black_24dp"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewSettingActivityChangeEmail"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutSettingActivityEmail"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editTextSettingsActivityEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:hint="Email"
+                    android:inputType="text" />
+
+                <Button
+                    android:id="@+id/buttonChangeEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:text="Change Email"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:id="@+id/dividerSettingsTwo"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
+
+
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutSettingActivityPhone"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textViewSettingActivityUserPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="User Phone"
+                    android:textSize="14sp"/>
+
+                <ImageButton
+                    android:id="@+id/imageButtonSettingsActivityUserPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/description"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_mode_edit_black_24dp"
+                    />
+
+                <ImageButton
+                    android:id="@+id/imageButtonSettingsActivityUserPhoneClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/description"
+                    android:background="@android:color/transparent"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_arrow_upward_black_24dp"
+                    android:visibility="gone"
+                    />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardViewSettingActivityChangePhone"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/linearLayoutSettingActivityPhone"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/editTextSettingsActivityPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    android:hint="Phone"
+                    />
+
+                <Button
+                    android:id="@+id/buttonChangePhone"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Change Phone" />
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/buttonSwitchProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSettingsProgressBarHolder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:text="कृपया प्रतीक्षा करें ..."/>
+
+    </LinearLayout>
+
+</LinearLayout>

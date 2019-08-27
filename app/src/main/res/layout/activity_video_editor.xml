@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InstructorVideoEditorActivity"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/videoIdHolder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"/>
+
+        <org.florescu.android.rangeseekbar.RangeSeekBar
+            android:id="@+id/rangeSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/videoView"
+            android:layout_marginTop="5dp"
+            rsb_indicator_text_color="@color/colorPrimaryDark"
+            rsb_progress_color="@color/colorPrimary"
+            rsb_progress_default_color="@color/colorPrimaryDark"
+            rsb_tick_mark_text_color="@color/colorPrimaryDark"
+            android:visibility="visible"
+            android:background="@color/white"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:id="@+id/tvLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/rangeSeekBar"
+            android:layout_alignStart="@+id/rangeSeekBar"
+            android:layout_below="@+id/rangeSeekBar"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/tvRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/rangeSeekBar"
+            android:layout_alignRight="@+id/rangeSeekBar"
+            android:layout_below="@+id/rangeSeekBar"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginEnd="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvRight"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/editorSaveVideo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Trim"
+                android:layout_margin="2dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white" />
+            <Button
+                android:id="@+id/editorSkipVideo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="SKIP"
+                android:layout_margin="2dp"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</LinearLayout>
